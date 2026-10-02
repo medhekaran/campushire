@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('CampusHire - Home')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: navbar}"></nav>
+
+<section class="ch-hero">
+    <div class="ch-hero-text">
+        <h1>Placement season, without the spreadsheet chaos.</h1>
+        <p>CampusHire puts every drive, application, and offer in one place — so students apply to what they're actually eligible for, and the placement cell finally has one dashboard instead of ten.</p>
+        <a href="/register" class="btn btn-ch-primary btn-lg">Get started</a>
+    </div>
+    <div class="ch-hero-mock">
+        <div class="ch-card">
+            <span class="mock-tag">APPROVED</span>
+            <h3 style="font-size:1.3rem; margin-bottom:0.3rem;">Software Engineer</h3>
+            <p style="color:#6B7088; margin-bottom:1rem;">Acme Corp · 8.5 LPA</p>
+            <span class="badge-status badge-shortlisted">Shortlisted</span>
+        </div>
+    </div>
+</section>
+
+<footer th:replace="~{fragments/layout :: footer}"></footer>
+</body>
+</html>

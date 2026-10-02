@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Admin Dashboard - CampusHire')}"></head>
+<body>
+<div class="ch-topbar">
+    <a class="brand" th:href="@{/}">Campus<span>Hire</span></a>
+    <button onclick="logout()">Log out</button>
+</div>
+
+<div class="container py-4">
+    <h3 class="mb-1">Drives waiting for approval</h3>
+    <p style="color:#6B7088;" class="mb-4">Students only see a drive after you approve it.</p>
+    <div id="pendingContainer"></div>
+</div>
+
+<script th:src="@{/js/common.js}"></script>
+<script th:src="@{/js/admin-dashboard.js}"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Register - CampusHire')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: navbar}"></nav>
+
+<div class="container col-md-5 py-5">
+    <div class="ch-form-card">
+        <h3 class="mb-4">Create an account</h3>
+        <div id="errorBox" class="alert alert-danger d-none"></div>
+
+        <form id="registerForm" novalidate>
+            <div class="mb-3">
+                <label class="form-label">Full name</label>
+                <input type="text" class="form-control" id="name" maxlength="100">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" maxlength="150">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" maxlength="72">
+                <div class="form-text">8 to 72 characters, with at least one letter and one number.</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Confirm password</label>
+                <input type="password" class="form-control" id="confirmPassword" maxlength="72">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">I am a</label>
+                <select class="form-select" id="role">
+                    <option value="STUDENT">Student</option>
+                    <option value="RECRUITER">Recruiter</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-ch-primary w-100" id="submitBtn">Register</button>
+        </form>
+    </div>
+</div>
+
+<footer th:replace="~{fragments/layout :: footer}"></footer>
+<script th:src="@{/js/auth.js}"></script>
+</body>
+</html>

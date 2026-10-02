@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Page not found - CampusHire')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: navbar}"></nav>
+<div class="container text-center py-5">
+    <h1 class="display-serif" style="font-size:2.5rem;">Page not found</h1>
+    <p style="color:#6B7088;" class="mb-4">The page you're looking for doesn't exist or may have moved.</p>
+    <a href="/" class="btn btn-ch-primary">Go home</a>
+</div>
+<footer th:replace="~{fragments/layout :: footer}"></footer>
+</body>
+</html>

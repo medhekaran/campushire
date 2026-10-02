@@ -1,0 +1,227 @@
+:root {
+  --ink: #141A35;
+  --paper: #F7F6F2;
+  --amber: #FFB100;
+  --success: #1F7A5C;
+  --border: #E4E1D6;
+  --surface: #FFFFFF;
+  --muted: #6B7088;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  margin: 0;
+}
+
+h1, h2, h3, .display-serif {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+/* Navbar */
+.ch-navbar {
+  background: var(--ink);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ch-navbar .brand {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  color: var(--paper);
+  text-decoration: none;
+}
+.ch-navbar .brand span { color: var(--amber); }
+
+/* Changed: border turns white/paper instead of amber on hover */
+.ch-navbar a.btn-ghost {
+  color: var(--paper);
+  border: 1px solid rgba(247,246,242,0.3);
+  padding: 0.45rem 1.1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.ch-navbar a.btn-ghost:hover { 
+  border-color: var(--paper);
+  color: var(--paper); 
+}
+
+/* Changed: solid button turns white/surface on hover */
+.ch-navbar a.btn-solid {
+  background: var(--amber);
+  color: var(--ink);
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.ch-navbar a.btn-solid:hover {
+  background: var(--surface);
+  border-color: var(--surface);
+  color: var(--ink);
+}
+
+/* Buttons */
+/* Changed: primary button turns to paper background with ink border on hover */
+.btn-ch-primary {
+  background: var(--amber);
+  color: var(--ink);
+  border: 1.5px solid transparent;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  transition: transform 0.1s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.btn-ch-primary:hover { 
+  transform: translateY(-1px); 
+  background: var(--paper);
+  border-color: var(--ink);
+  color: var(--ink); 
+}
+
+/* Cards */
+.ch-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.ch-card:hover {
+  box-shadow: 0 8px 24px rgba(20, 26, 53, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Status badges */
+.badge-status {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.badge-applied { background: #EEF0FF; color: #3B4494; }
+.badge-shortlisted { background: #FFF3D6; color: #8A5A00; }
+.badge-selected { background: #E4F4EC; color: var(--success); }
+.badge-rejected { background: #FBEAEA; color: #A13030; }
+
+/* Forms */
+.ch-form-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.5rem;
+}
+.ch-form-card .form-control, .ch-form-card .form-select {
+  border: 1px solid var(--border);
+  padding: 0.65rem 0.9rem;
+  border-radius: 6px;
+}
+.ch-form-card .form-control:focus, .ch-form-card .form-select:focus {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(20, 26, 53, 0.08);
+}
+
+/* Hero */
+.ch-hero {
+  padding: 5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.ch-hero-text { flex: 1.1; }
+.ch-hero-text h1 {
+  font-size: 3.2rem;
+  line-height: 1.08;
+  margin-bottom: 1.2rem;
+}
+.ch-hero-text p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 40ch;
+  margin-bottom: 1.8rem;
+}
+
+/* Mock drive card in hero */
+.ch-hero-mock {
+  flex: 0.9;
+  transform: rotate(-3deg);
+}
+.ch-hero-mock .ch-card {
+  box-shadow: 0 20px 40px rgba(20, 26, 53, 0.12);
+}
+.ch-hero-mock .mock-tag {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--amber);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+}
+
+@media (max-width: 768px) {
+  .ch-hero { flex-direction: column; padding: 3rem 1.2rem; }
+  .ch-hero-text h1 { font-size: 2.2rem; }
+  .ch-hero-mock { transform: none; width: 100%; }
+}
+
+.badge-pending { background: #FFF3D6; color: #8A5A00; }
+.badge-approved { background: #E4F4EC; color: var(--success); }
+
+/* Topbar */
+.ch-topbar {
+  background: var(--ink);
+  padding: 0.9rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ch-topbar .brand {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  color: var(--paper);
+  text-decoration: none;
+}
+.ch-topbar .brand span { color: var(--amber); }
+
+/* Changed: border turns white/paper instead of amber on hover */
+.ch-topbar button {
+  background: none;
+  border: 1px solid rgba(247,246,242,0.3);
+  color: var(--paper);
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.ch-topbar button:hover { 
+  border-color: var(--paper);
+  background: rgba(255, 255, 255, 0.08); 
+}
+
+.ch-applicant {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--border);
+}
+.ch-empty {
+  color: var(--muted);
+  padding: 2rem;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+}
